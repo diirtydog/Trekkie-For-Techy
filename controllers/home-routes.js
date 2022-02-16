@@ -5,6 +5,12 @@ const { Blog, User, Comment } = require('../models');
 router.get('/', (req, res) => {
   console.log(req.session);
     Blog.findAll({
+      attributes: [
+        'id',
+        'blog_text',
+        'title',
+        'created_at'
+      ],
       include: [
         {
           model: Comment,
@@ -22,7 +28,7 @@ router.get('/', (req, res) => {
     })
       .then(dbBlogData => {
         // pass a single Blog object into the homepage template
-        const Blogs = dbBlogData.map(Blog => Blog.get({ plain: true }));
+        const Blogs = dbBlogData.map(blog => blog.get({ plain: true }));
         res.render('homepage', { 
           Blogs,
           loggedIn: req.session.loggedIn
