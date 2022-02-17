@@ -28,7 +28,7 @@ router.get('/', (req, res) => {
     })
       .then(dbBlogData => {
         // pass a single Blog object into the homepage template
-        const Blogs = dbBlogData.map(blog => blog.get({ plain: true }));
+        const Blogs = dbBlogData.map(Blog => Blog.get({ plain: true }));
         res.render('homepage', { 
           Blogs,
           loggedIn: req.session.loggedIn

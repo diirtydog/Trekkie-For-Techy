@@ -1,7 +1,16 @@
 <ol class="post-list">
-    {{#each blogs as |blog|}}
     <li>
-       {{> blog-info blog }}
+       <article class="post">
+            <div class="title">
+               <h2>{{blogs}}</h2>
+                <span>({{blog.blog_text}})</span>
+            </div>
+            <div class="meta">
+                Created by {{user.username}} on
+                {{format_date created_at}}
+                |
+                <a href="/blog/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
+            </div>
+        </article>
     </li>
-    {{/each}}
 </ol>
