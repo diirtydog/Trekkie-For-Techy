@@ -29,9 +29,10 @@ router.get('/', (req, res) => {
       .then(dbBlogData => {
         // pass a single Blog object into the homepage template
         const Blogs = dbBlogData.map(Blog => Blog.get({ plain: true }));
+        
         res.render('homepage', { 
           Blogs,
-          loggedIn: req.session.loggedIn
+         //  loggedIn: req.session.loggedIn
        });
       })
       .catch(err => {
@@ -68,11 +69,12 @@ router.get('/Blog/:id', (req, res) => {
 
     // serialize the data
     const Blog = dbBlogData.get({ plain: true });
+    console.log(Blog);
 
     // pass data to template
     res.render('single-Blog', {
       Blog,
-      loggedIn: req.session.loggedIn
+     //  loggedIn: req.session.loggedIn
    });
 
   })
