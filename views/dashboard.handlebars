@@ -7,7 +7,7 @@
             <input type="text" id="blog-title" name="blog-title" />
         </div>
         <div>
-            <label for="blog_text">Link</label>
+            <label for="blog_text">Content</label>
             <input type="blog_text" name="blog_text" />
         </div>
         <button type="submit" class="btn">Create</button>
@@ -21,6 +21,7 @@
         {{#each blogs as |blog|}}
         <li>
         <a href="/dashboard/edit/{{blog.id}}" class="edit-link">Edit blog</a>
+        <p>{{blog.title}}</p>
         </li>
         {{/each}}
     </ol>

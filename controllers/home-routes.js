@@ -9,12 +9,12 @@ router.get('/', (req, res) => {
         'id',
         'blog_text',
         'title',
-        'created_at'
+        'createdAt'
       ],
       include: [
         {
           model: Comment,
-          attributes: ['id', 'comment_text', 'Blog_id', 'user_id', 'created_at'],
+          attributes: ['id', 'comment_text', 'Blog_id', 'user_id', 'createdAt'],
           include: {
             model: User,
             attributes: ['username']
@@ -49,7 +49,7 @@ router.get('/Blog/:id', (req, res) => {
     include: [
       {
         model: Comment,
-        attributes: ['id', 'comment_text', 'Blog_id', 'created_at'],
+        attributes: ['id', 'comment_text', 'Blog_id', 'createdAt'],
         include: {
           model: User,
           attributes: ['username']
@@ -99,7 +99,7 @@ router.get('/login', (req, res) => {
 //         id: 1,
 //         Blog_url: 'https:// handlebarsjs.com/guide/',
 //         title: 'Handlebars Docs',
-//         created_at: new Date(),
+//         createdAt: new Date(),
 //         vote_count: 10,
 //         comments: [{}, {}],
 //         user: {

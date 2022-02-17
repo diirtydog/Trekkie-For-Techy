@@ -13,12 +13,12 @@ router.get ('/', (req, res) => {
             'id',
             'blog_text',
             'title',
-            'created_at',
+            'createdAt',
     ],
     include: [
       {
         model: Comment,
-        attributes: ['id', 'comment_text', 'blog_id', 'user_id', 'created_at'],
+        attributes: ['id', 'comment_text', 'blog_id', 'user_id', 'createdAt'],
         include: {
           model: User,
           attributes: ['username']
@@ -47,12 +47,12 @@ router.get ('/', (req, res) => {
         'id',
         'blog_text',
         'title',
-        'created_at',
+        'createdAt',
       ],
       include: [
         {
           model: Comment,
-          attributes: ['id', 'comment_text', 'blog_id', 'user_id', 'created_at'],
+          attributes: ['id', 'comment_text', 'blog_id', 'user_id', 'createdAt'],
           include: {
             model: User,
             attributes: ['username']
@@ -66,10 +66,10 @@ router.get ('/', (req, res) => {
     })
       .then(dbBlogData => {
         if (dbBlogData) {
-          const post = dbBlogData.get({ plain: true });
+          const Blog = dbBlogData.get({ plain: true });
           
           res.render('edit-blog', {
-            blog,
+            Blog,
             loggedIn: true
           });
         } else {
