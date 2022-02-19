@@ -3,10 +3,13 @@
     <h2>
         Edit Post
     </h2>
-    <form class="edit-post-form">
+    <form class="edit-blog-form">
         <div>
             <input name="blog-title" type="text" value="{{Blog.title}}">
             <span>Edit if you want to!</span>
+        </div>
+        <div>
+          <input name = "blog-text" type="text" value="{{Blog.blog_text}}">
         </div>
         <div>
             {{Blog.blog_text}}
