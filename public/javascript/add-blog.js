@@ -1,11 +1,11 @@
 async function newFormHandler(event) {
     event.preventDefault();
   
-    const title = document.querySelector('input[name="blog-title"]').value;
-    const blog_text = document.querySelector('input[name="blog-text"]').value;
+    const title = document.querySelector('input[name="blog-title"]').value.trim();
+    const blog_text = document.querySelector('input[name="blog-text"]').value.trim();
     console.log('eve')
   
-    const response = await fetch(`/api/blogs`, {
+    const response = await fetch(`/api/blog`, {
       method: 'POST',
       body: JSON.stringify({
         title,

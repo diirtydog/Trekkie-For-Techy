@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { Blog, User, Comment } = require('../../models');
-// const sequelize = require('../../config/connection');
+const sequelize = require('../../config/connection');
+const withAuth = require('../../utils/auth')
 
 router.get('/', (req, res) => {
     Blog.findAll({
@@ -57,7 +58,7 @@ router.get('/:id', (req, res) => {
     });
 });
 
-router.post('/', (req, res) => {
+router.post('/', withAuth, (req, res) => {
     Blog.create({
         title: req.body.title,
         blog_text: req.body.blog_text,
@@ -70,10 +71,11 @@ router.post('/', (req, res) => {
     });
 });
 
-router.put('/:id', (req, res) => {
+router.put('/:id', withAuth, (req, res) => {
     Blog.update(
         {
-            title: req.body.title
+            title: req.body.title,
+            blog_text: req.body.blog_text
         },
         {
             where: {
@@ -93,7 +95,7 @@ router.put('/:id', (req, res) => {
     });
 });
 
-router.delete('/:id', (req, res) => {
+router.delete('/:id', withAuth, (req, res) => {
     Blog.destroy({
         where: {
             id: req.params.id

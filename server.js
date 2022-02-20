@@ -9,8 +9,8 @@ const helpers = require('./utils/helpers.js');
 const hbs = exphbs.create({ helpers });
 
 const sess = {
-    secret: 'Super secret secret',
-    cookie: {maxAge: (1000 * 60 * 100)},
+    secret: 'pay them bills hoe',
+    cookie: {},
     resave: false,
     saveUninitialized: true,
     store: new SequelizeStore({

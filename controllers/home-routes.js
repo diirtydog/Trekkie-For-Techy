@@ -32,7 +32,7 @@ router.get('/', (req, res) => {
         
         res.render('homepage', { 
           Blogs,
-         //  loggedIn: req.session.loggedIn
+          loggedIn: req.session.loggedIn
        });
       })
       .catch(err => {
@@ -74,7 +74,7 @@ router.get('/Blog/:id', (req, res) => {
     // pass data to template
     res.render('single-Blog', {
       Blog,
-     //  loggedIn: req.session.loggedIn
+      loggedIn: req.session.loggedIn
    });
 
   })
