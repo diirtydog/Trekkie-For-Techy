@@ -89,6 +89,11 @@ nav a:hover {
   background-color: var(--dark);
 }
 
+.log {
+  text-align: center;
+  border: 2px solid var(--dark);
+}
+
 .page-title {
   text-align: center;
   width: 100%;
@@ -103,15 +108,16 @@ nav a:hover {
 }
 
 .btn {
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   text-decoration: none;
   padding: 0.5rem 1.2rem;
-  width: 100%;
+  width: 50%;
   margin: 5px 0;
   border-radius: var(--border-radius);
   color: var(--dark);
   outline: none;
   background-color: var(--primary);
+  border: 2px solid var(--dark);
 }
 
 .btn:hover {
@@ -125,6 +131,7 @@ nav a:hover {
 
 /* CARDS */
 .card {
+  background-color: var(--primary) ;
   margin: 0 0 20px 0;
   border: 3px solid var(--dark);
   border-radius: var(--border-radius);
@@ -135,6 +142,7 @@ nav a:hover {
   background-color: var(--dark);
   padding: 2.5%;
   border-radius: calc(0.18rem - 1px) calc(0.18rem - 1px) 0 0;
+  text-align: center;
 }
 
 .card-body {
@@ -923,7 +931,7 @@ nav a:hover {
 /* col-lg */
 @media screen and (min-width: 992px) {
   nav {
-    width: auto;
+    padding: 0 0 0 10px;
     justify-content: flex-end;
   }
 
