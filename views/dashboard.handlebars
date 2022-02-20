@@ -1,4 +1,4 @@
-<section>
+<section class="card card-header text-dark bg-primary">
     <h2>Create New Blog</h2>
 
     <form class="new-blog-form">
@@ -16,15 +16,15 @@
 
 {{#if blogs.length}}
 <section>
-    <h2>Your Blogs</h2>
-    <ol>
+    <h2 class="page-title">Your Blogs</h2>
+    <div>
         {{#each blogs as |blog|}}
-        <li>
-        <a href="/dashboard/edit/{{blog.id}}" class="edit-link">Edit blog</a>
-        <p>{{blog.title}}</p>
-        </li>
+        <div class="card card-header text-dark bg-primary">
+        <a href="/dashboard/edit/{{blog.id}}" class="edit-link btn log">Edit blog</a>
+        <p class="page-title">{{blog.title}}</p>
+        </div>
         {{/each}}
-    </ol>
+    </div>
 </section>
 {{/if}}
 
