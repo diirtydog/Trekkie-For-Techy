@@ -72,7 +72,7 @@ router.get('/Blog/:id', (req, res) => {
     console.log(Blog);
 
     // pass data to template
-    res.render('single-Blog', {
+    res.render('single-blog', {
       Blog,
       loggedIn: req.session.loggedIn
    });
