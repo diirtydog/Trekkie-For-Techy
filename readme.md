@@ -19,6 +19,8 @@
   It is intended to be used as a tech blog.
   ## Languages That Were Used During Creation
   ![Languages](https://img.shields.io/badge/JavaScript-Master-blue)
+  ![Languages](https://img.shields.io/badge/Handlebar-Gangster-orange)
+  ![Languages](https://img.shields.io/badge/Backend-Bandit-green)
   ## Installation Instructions
   NPM install
   ## Usage Information
